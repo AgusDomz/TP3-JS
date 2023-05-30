@@ -1,32 +1,4 @@
 "use strict"; //sirve para tener que definir si o si las variables
-/*
-console.log(source);
-
-print();
-
-function print() {
-    console.log("desde print: " + source);
-}
-
-var source = "AgusDomz"
-
-print();
-
-
-let ironman = {
-    nombre : "Tony Stark",
-    alias : "ironman",
-    edad : 54,
-    mecanico : "pipero",
-    grupo : "vengadores",
-}
-
-let propiedades = ["nombre", "alias", "edad", "mecanico", "grupo"];
-
-for (let i = 0; i < Object.keys(ironman).length; i++) {
-    console.log(ironman[propiedades[i]]);
-}
-*/
 
 /*
 1- Crear un array llamado meses y que almacene el nombre de los doce meses del año. Mostrar por pantalla en forma de lista los doce nombres del arreglo.
@@ -52,11 +24,66 @@ for (let i = 0; i < Object.keys(ironman).length; i++) {
     -Escribe por pantalla el elemento que ocupa la segunda posición.
     -Sustituye el elemento que ocupa la segunda posición por la ciudad de 'Barcelona'.
 
+
+    let ciudades = [];
+
+    while (true) {
+        var ciudad = prompt('Ingrese nombres de ciudades!');
+
+        if (ciudad === null) {
+            break;
+        }
+
+        ciudades.push(ciudad);
+    }
+
+    console.log('Longitud del arreglo: ' + ciudades.length);
+
+    document.write('Primera posicion: ' + ciudades[0] + '<br>');
+    document.write('Tercera posicion: ' + ciudades[2] + '<br>');
+    document.write('Ultima posicion: ' + ciudades[ciudades.length - 1] + '<br>');
+
+    ciudades.push('París');
+
+    document.write('Elemento en segunda posicion: ' + ciudades[1]);
+
+    ciudades[1] = 'Barcelona';
+
+    console.log(ciudades);
+
+
+
 */
 //-----------------------------------------------------------------------------------
 /*
 
 3- Escribir un script que simule el lanzamiento de dos dados. Hacer uso de la función Math.random para obtener números aleatorios entre 1 y 6 para cada uno de los lanzamientos de los dados. Sumar el resultado de lanzar dos dados y anotar en un array el número de apariciones de dicha suma, repitiendo 50 veces esta operación.
+
+
+
+        let apariciones = [];
+
+    function lanzarDado() {
+        return Math.floor (Math.random() * 6) + 1;
+    }
+
+    for (let i = 0; i < 50; i++) {
+        let dadoUno = lanzarDado();
+        let dadoDos = lanzarDado();
+        let suma = dadoUno + dadoDos;
+    
+        if (!apariciones[suma]) {
+            apariciones[suma] = 1;
+        } else {
+            apariciones[suma]++;
+        }
+    }
+
+    for (let j = 2; j <= 12 ; j++) {
+        console.log('Suma', j, 'aparece', apariciones[j] || 0, 'veces.');
+    }
+
+
 
 */
 //-----------------------------------------------------------------------------------
@@ -64,11 +91,43 @@ for (let i = 0; i < Object.keys(ironman).length; i++) {
 
 4- Escribir el código de una función a la que se pasa como parámetro un número entero y devuelve como resultado una cadena de texto que indica si el número es par o impar. Mostrar por pantalla el resultado devuelto por la función.
 
+
+
+    let numero = parseInt(prompt('Ingrese un numero!'));
+
+    function parImpar(numero) {
+        if (numero % 2 === 0) {
+            console.log('El numero es par');
+        } else {
+            console.log('El numero es impar');
+        }
+    }
+
+    let resultado = parImpar(numero);
+
+
 */
 //-----------------------------------------------------------------------------------
 /*
 
 5- Definir una función que muestre información sobre una cadena de texto que se le pasa como argumento. A partir de la cadena que se le pasa, la función determina si esa cadena está formada sólo por mayúsculas, sólo por minúsculas o por una mezcla de ambas.
+
+
+    let texto = prompt('Ingrese una cadena de texto!');
+
+    function cadenaTexto(texto) {
+        if (texto === texto.toUpperCase()) {
+            console.log('La cadena esta formada solo por MAYÚSC');
+        } else if (texto === texto.toLowerCase()) {
+            console.log('La cadena esta formada solo por minúsc');
+        } else {
+            console.log('La cadena esta formada por MAYÚSC y minúsc');
+        }
+    }
+
+    let resultado = cadenaTexto(texto);
+
+
 
 */
 //-----------------------------------------------------------------------------------
@@ -77,6 +136,19 @@ for (let i = 0; i < Object.keys(ironman).length; i++) {
 6- Solicitar por pantalla al usuario ingresar el valor de los lados de un rectángulo, luego crear una función para calcular su perímetro y mostrarlo por pantalla.
 
     -La fórmula del perímetro  es p = 2*(a +b)
+
+
+
+    let base = parseInt(prompt('Ingrese la base del rectangulo'));
+    let altura = parseInt(prompt('Ingrese la altura del rectangulo'));
+
+    function perimetroRectangulo(base, altura) {
+        return (2 * (base + altura));
+    }
+
+    console.log('El perimetro del rectangulo es: ' + perimetroRectangulo(base, altura));
+
+
 
 */
 //-----------------------------------------------------------------------------------
